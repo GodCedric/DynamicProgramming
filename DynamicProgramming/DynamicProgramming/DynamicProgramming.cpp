@@ -3,6 +3,7 @@
 #include"CutRod.h"
 #include"MatrixChain.h"
 #include"LCS.h"
+#include"optimalBST.h"
 using namespace std;
 
 
@@ -53,25 +54,50 @@ int main(){
 	////////输出结果即为两序列的最长公共子序列
 	cout<<endl;
 	cout<<"最长公共子序列问题："<<endl;
-	int m = 7;
-	int n = 6;
+	int m3 = 7;
+	int n3 = 6;
 	char x[7] = {'A','B','C','B','D','A','B'};
 	char y[6] = {'B','D','C','A','B','A'};
 	cout<<"序列X为：";
-	for(int i=0;i<m;i++)
+	for(int i=0;i<m3;i++)
 		cout<<x[i];
 	cout<<endl;
 	cout<<"序列Y为：";
-	for(int i=0;i<n;i++)
+	for(int i=0;i<n3;i++)
 		cout<<y[i];
 	cout<<endl;
 	int c[8][7] = {0};
-	LCS_length(x,y,m,n,c);
+	LCS_length(x,y,m3,n3,c);
 	cout<<"最长公共子序列长度为：";
-	cout<<c[m][n]<<endl;
+	cout<<c[m3][n3]<<endl;
 	cout<<"最长公共子序列为：";
-	LCS_print(x,y,m,n,c);
+	LCS_print(x,y,m3,n3,c);
 	cout<<endl;
+
+	//最优二叉树问题
+	cout<<endl;
+	cout<<"最优二叉树问题："<<endl;
+	int n4 = 6;
+	double p[6] = {0,0.15,0.10,0.05,0.10,0.20};
+	double q[6] = {0.05,0.10,0.05,0.05,0.05,0.10};
+	cout<<"搜索概率：";
+	for(int i=1;i<n4;i++)
+		cout<<p[i]<<" ";
+	cout<<endl;
+	cout<<"伪搜索概率：";
+	for(int i=0;i<n4;i++)
+		cout<<q[i]<<" ";
+	cout<<endl;
+	vector<double> p4(p,p+n4);
+	vector<double> q4(q,q+n4);
+	vector<vector<double>> e4(n4+1,vector<double>(n4+1,0));
+	vector<vector<double>> w4(n4+1,vector<double>(n4+1,0));
+	vector<vector<int>> root(n4,vector<int>(n4,0));
+	optimal_bst(p4,q4,e4,w4,root);
+	cout<<"最优二叉搜索树期望代价：";
+	cout<<e4[1][n4-1]<<endl;
+	cout<<"最优二叉搜索树为："<<endl;
+	optimalBST_print(root,1,5);
 
 	
 	return 0;

@@ -1,5 +1,7 @@
 #ifndef __LCS__H__
 #define __LCS__H__
+#include<iostream>
+using namespace std;
 
 void LCS_length(char x[],char y[],int m,int n,int c[][7]){
 	for(int i=1;i<=m;i++){
