@@ -21,6 +21,9 @@
     <ClInclude Include="MatrixChain.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="LCS.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DynamicProgramming.cpp">
