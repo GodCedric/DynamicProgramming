@@ -74,6 +74,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="activity_choose.h" />
     <ClInclude Include="CutRod.h" />
     <ClInclude Include="LCS.h" />
     <ClInclude Include="MatrixChain.h" />

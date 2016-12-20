@@ -27,6 +27,9 @@
     <ClInclude Include="optimalBST.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="activity_choose.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DynamicProgramming.cpp">

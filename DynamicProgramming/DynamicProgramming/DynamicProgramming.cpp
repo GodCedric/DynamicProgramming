@@ -4,11 +4,14 @@
 #include"MatrixChain.h"
 #include"LCS.h"
 #include"optimalBST.h"
+#include"activity_choose.h"
 using namespace std;
 
 
 int main(){
 
+	/*************动态规划*************/
+	
 	////////钢条切割问题
 	////////钢条切割问题求长度为n的钢条的最佳收益及切割方案
 	////////n表示钢条长度，p表示钢条为1~10时的收益值
@@ -98,6 +101,23 @@ int main(){
 	cout<<e4[1][n4-1]<<endl;
 	cout<<"最优二叉搜索树为："<<endl;
 	optimalBST_print(root,1,5);
+
+	
+	/*************贪心算法*************/
+	
+	//活动选择问题
+	cout<<endl;
+	cout<<"活动选择问题："<<endl;
+	int n5 = 12;
+	int ss[] = {0,1,3,0,5,3,5,6,8,8,2,12};
+	int ff[] = {0,4,5,6,7,9,9,10,11,12,14,16}; //默认结束时间已经按递增顺序排列好
+	vector<int> s5(ss,ss+12);
+	vector<int> f5(ff,ff+12);
+	vector<vector<int>> c5(n5,vector<int>(n5,0));
+	vector<vector<int>> res5(n5,vector<int>(n5,0));
+	dp_for_ac(s5,f5,c5,res5);
+	dp_for_ac_print(s5,f5,1,11,c5,res5);
+
 
 	
 	return 0;
