@@ -65,4 +65,26 @@ void aid_for_print(int i,int j,vector<vector<int>>& c,vector<vector<int>>& res){
 	}
 }
 
+
+//使用贪心算法解决活动选择问题
+void recursive_activity_selector(vector<int>& s,vector<int>& f,int k,int n,vector<int>& result){
+	int m = k+1;
+	while(m<=n && s[m]<f[k])
+		m += 1;
+	if(m <= n){
+		result.push_back(m);
+		recursive_activity_selector(s,f,m,n,result);
+	}
+}
+
+//贪心算法输出
+void recursive_activity_selector_print(vector<int> result){
+	cout<<"最大活动个数为："<<result.size()<<endl;
+	cout<<"活动组合为：";
+	vector<int>::iterator itr = result.begin();
+	for(itr;itr!=result.end();itr++){
+		cout<<"a"<<*itr<<" ";
+	}
+}
+
 #endif

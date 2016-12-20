@@ -106,6 +106,7 @@ int main(){
 	/*************贪心算法*************/
 	
 	//活动选择问题
+	////使用动态规划算法////
 	cout<<endl;
 	cout<<"活动选择问题："<<endl;
 	int n5 = 12;
@@ -117,8 +118,11 @@ int main(){
 	vector<vector<int>> res5(n5,vector<int>(n5,0));
 	dp_for_ac(s5,f5,c5,res5);
 	dp_for_ac_print(s5,f5,1,11,c5,res5);
-
-
+	////使用贪心算法////
+	//递归的贪心算法
+	vector<int> result;
+	recursive_activity_selector(s5,f5,0,11,result);
+	recursive_activity_selector_print(result);
 	
 	return 0;
 }
