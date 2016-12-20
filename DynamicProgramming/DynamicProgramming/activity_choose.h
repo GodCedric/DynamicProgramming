@@ -67,6 +67,7 @@ void aid_for_print(int i,int j,vector<vector<int>>& c,vector<vector<int>>& res){
 
 
 //使用贪心算法解决活动选择问题
+//递归方法
 void recursive_activity_selector(vector<int>& s,vector<int>& f,int k,int n,vector<int>& result){
 	int m = k+1;
 	while(m<=n && s[m]<f[k])
@@ -85,6 +86,21 @@ void recursive_activity_selector_print(vector<int> result){
 	for(itr;itr!=result.end();itr++){
 		cout<<"a"<<*itr<<" ";
 	}
+}
+
+//迭代方法
+void recursive_activity_selector2(vector<int>& s,vector<int>& f){
+	int n = s.size() - 1;
+	vector<int> result;
+	int k = 1;
+	result.push_back(k);
+	for(int i=2;i<=n;i++){
+		if(s[i] > f[k]){
+			result.push_back(i);
+			k = i;
+		}
+	}
+	recursive_activity_selector_print(result);
 }
 
 #endif

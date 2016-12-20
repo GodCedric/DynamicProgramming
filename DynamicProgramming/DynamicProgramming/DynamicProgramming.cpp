@@ -119,10 +119,13 @@ int main(){
 	dp_for_ac(s5,f5,c5,res5);
 	dp_for_ac_print(s5,f5,1,11,c5,res5);
 	////使用贪心算法////
-	//递归的贪心算法
+	//递归版
 	vector<int> result;
 	recursive_activity_selector(s5,f5,0,11,result);
 	recursive_activity_selector_print(result);
+	//迭代版
+	cout<<endl;
+	recursive_activity_selector2(s5,f5);
 	
 	return 0;
 }
