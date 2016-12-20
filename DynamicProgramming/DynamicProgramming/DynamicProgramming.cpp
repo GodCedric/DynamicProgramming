@@ -5,6 +5,7 @@
 #include"LCS.h"
 #include"optimalBST.h"
 #include"activity_choose.h"
+#include"fracktional_knapsack_problem.h"
 using namespace std;
 
 
@@ -77,7 +78,7 @@ int main(){
 	LCS_print(x,y,m3,n3,c);
 	cout<<endl;
 
-	//最优二叉树问题
+	////////最优二叉树问题
 	cout<<endl;
 	cout<<"最优二叉树问题："<<endl;
 	int n4 = 6;
@@ -105,7 +106,7 @@ int main(){
 	
 	/*************贪心算法*************/
 	
-	//活动选择问题
+	////////活动选择问题
 	////使用动态规划算法////
 	cout<<endl;
 	cout<<"活动选择问题："<<endl;
@@ -126,6 +127,31 @@ int main(){
 	//迭代版
 	cout<<endl;
 	recursive_activity_selector2(s5,f5);
+	cout<<endl;
+
+	////////分数背包问题
+	cout<<endl;
+	cout<<"分数背包问题："<<endl;
+	double ww[] = {10,20,30};
+	double vv[] = {60,100,120};
+	cout<<"对应商品重量：";
+	for(int i=0;i<3;i++){
+		cout<<ww[i]<<"  ";
+	}
+	cout<<endl;
+	cout<<"对应商品价格：";
+	for(int i=0;i<3;i++){
+		cout<<vv[i]<<"  ";
+	}
+	cout<<endl;
+	
+	vector<double> w6(ww,ww+3);
+	vector<double> v6(vv,vv+3);
+	double W = 50;
+	cout<<"背包承载量："<<W<<endl;
+	double total;
+	total = FKP(w6,v6,W);
+	cout<<"背包所能承最大价值："<<total<<endl;
 	
 	return 0;
 }

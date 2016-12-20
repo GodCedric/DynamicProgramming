@@ -76,6 +76,7 @@
   <ItemGroup>
     <ClInclude Include="activity_choose.h" />
     <ClInclude Include="CutRod.h" />
+    <ClInclude Include="fracktional_knapsack_problem.h" />
     <ClInclude Include="LCS.h" />
     <ClInclude Include="MatrixChain.h" />
     <ClInclude Include="optimalBST.h" />
