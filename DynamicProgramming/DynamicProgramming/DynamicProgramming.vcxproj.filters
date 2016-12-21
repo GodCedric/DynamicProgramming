@@ -30,7 +30,7 @@
     <ClInclude Include="activity_choose.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="fracktional_knapsack_problem.h">
+    <ClInclude Include="knapsack_problem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
